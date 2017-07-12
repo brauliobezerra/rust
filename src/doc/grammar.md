@@ -716,15 +716,35 @@ return_expr : "return" expr ? ;
 
 ### Primitive types
 
-**FIXME:** grammar?
+Primitive types are the types that form the basis to compose user-defined types.
+
+Note that primitive types identified by identifiers (like `u32` and `bool`)
+**are not reserved words**. They aren't part of the syntax of the language. So
+they can be reused in contexts where types don't apply. For example, we can have
+functions and variables with names like `u8` or `str`.
+
+#### Boolean type
+
+The boolean type `bool` defines a space in memory which can have one of two
+values: `true` or `false`. See [Boolean
+literals](#unary-operator-expressions).
 
 #### Machine types
 
-**FIXME:** grammar?
+The machine types are:
+
+* The unsigned `u8`, `u16`, `u32` and `u64`
+* The signed `i8`, `i16`, `i32` and `i64`
+* The floats `f32` and `f64` (IEEE 754-2008 **binary32** and **binary64**,
+respectively).
 
 #### Machine-dependent integer types
 
-**FIXME:** grammar?
+The machine-dependent types are
+
+* The unsigned `usize`, which has the same number of bits of the platform
+pointer type.
+* The signed `isize` which can be used to perform pointer arithmetic.
 
 ### Textual types
 
